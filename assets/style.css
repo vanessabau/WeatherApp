@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+.card-header{
+    background-color: burlywood;
+    text-align: center;
+    padding: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#city-search {
+    margin: 10px;
+}
+.form-control{
+    margin-right: 10px;
+}
+.col-8{
+    float: left;
+}
+
+#view {
+    margin: 10px;
+}

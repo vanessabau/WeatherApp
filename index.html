@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>Weather App</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./assets/style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="https://kit.fontawesome.com/888a1c1363.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container col-12">
+        <div class="card col-12">
+
+            <!--HEADER-->
+            <div class="row">
+                <div class="card-header col-12">
+                    <h1>Weather Bug</h1>
+                </div>
+            </div>
+        
+        <!--WEATHER DATA CONTENT-->
+        <div class="row">
+            <!--Search column-->
+            <div class="col-4">
+                <div class="row">
+                    <div class="card" style="width: 100%" id="city-search">
+                        <div class="card-header">
+                            City
+                        </div>
+                        <nav class="navbar navbar-light bg-light">
+                            <form class="form-inline">
+                              <input class="form-control col-8" type="search" placeholder="City" aria-label="Search" id="city-lookup">
+                              <button class="btn btn-outline-secondary my-sm-0" type="submit" id="submitBtn">Search</button>
+                            </form>
+                          </nav>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">City history 1</li>
+                            <li class="list-group-item">City history 2</li>
+                            <li class="list-group-item">City history 3</li>
+                            <li class="list-group-item">City history 4</li>
+                            <li class="list-group-item">City history 5</li>
+                            <li class="list-group-item">City history 6</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--CURRENT WEATHER CARD-->
+            <div class="col-8">
+            <div class="row">
+                <div class="card" style="width: 100%" id="view">
+                    <div class="card-header">
+                        Current Weather
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <p id="city2Day">City</p>
+                            <p id="date">Day</p> 
+                            <div id="icon2Day">Icon</div> </li>
+                        <li class="list-group-item" id="temp2Day">Temperature</li>
+                        <li class="list-group-item" id="humidity2Day">Humidity</li>
+                        <li class="list-group-item" id="wind2Day">Wind Speed</li>
+                        <li class="list-group-item" id="uv2Day">UV Index</li>
+
+                    </ul>
+                </div>
+            </div>
+            
+            <!--FUTURE WEATHER CARD-->
+            <div class="row">
+                <div class="card" style="width: 100%" id="view">
+                    <div class="card-header">
+                        5-Day Forcast
+                    </div>
+                    <div>
+                        <div class="card">MONDAY</div>
+                        <div class="card">TUESDAY</div>
+                        <div class="card">WEDNESDAY</div>
+                        <div class="card">THURSDAY</div>
+                        <div class="card">FRIDAY</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./assets/script.js"></script>
+</body>
