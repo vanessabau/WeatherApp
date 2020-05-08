@@ -60,10 +60,20 @@ $(document).ready(function() {
             console.log(response);
             
             for (var i=0; i<2; i++){
-                console.log(response.list[i].main.temp);
-                console.log(response.list[i].main.humidity);
-                console.log(response.list[i].weather[0].icon);
+
+                var temp5 = response.list[i].main.temp;
+                var tempF5 = (response.list[i].main.temp - 273.15) * 1.80 + 32;
+                var humidity5 = response.list[i].main.humidity;
+                var iconCode = response.list[i].weather[0].icon;
+                
+                console.log(temp5);
+                console.log(tempF5); 
+                console.log(humidity5); 
+                console.log(iconCode);
             }
+
+            
+           // $("#forcast").text("Humidity: "+ response.list[i].main.humidity);
         })
     }
 
