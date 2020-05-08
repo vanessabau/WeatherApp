@@ -40,7 +40,7 @@ $(document).ready(function() {
 
             //TRANSFER TO HTML
             $("#city2Day").text(cityLookUp);
-            
+            $("#icon2Day").attr("src", "http://openweathermap.org/img/wn/"+iconCode1+ "@2x.png");
             $("#temp2Day").text("Temperature: "+ tempF.toFixed(2)+ "°F");
             $("#humidity2Day").text("Humidity: " + humidity);
             $("#wind2Day").text("Wind Speed: " + windSpeed);
