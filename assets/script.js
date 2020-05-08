@@ -19,6 +19,7 @@ $(document).ready(function() {
             console.log(response);
 
             //render the weather forecast
+            var iconCode1 = response.weather[0].icon;
             var temp = response.main.temp;
             var tempF = (response.main.temp - 273.15) * 1.80 + 32;
             var humidity = response.main.humidity;
@@ -28,6 +29,7 @@ $(document).ready(function() {
             var timezone = response.timezone;
 
             //TESTING/DEBUGGING
+            console.log(iconCode1);
             console.log(temp);
             console.log(tempF);
             console.log(humidity);
@@ -38,6 +40,7 @@ $(document).ready(function() {
 
             //TRANSFER TO HTML
             $("#city2Day").text(cityLookUp);
+            
             $("#temp2Day").text("Temperature: "+ tempF.toFixed(2)+ "°F");
             $("#humidity2Day").text("Humidity: " + humidity);
             $("#wind2Day").text("Wind Speed: " + windSpeed);
@@ -64,12 +67,12 @@ $(document).ready(function() {
                 var temp5 = response.list[i].main.temp;
                 var tempF5 = (response.list[i].main.temp - 273.15) * 1.80 + 32;
                 var humidity5 = response.list[i].main.humidity;
-                var iconCode = response.list[i].weather[0].icon;
+                var iconCode5 = response.list[i].weather[0].icon;
                 
                 console.log(temp5);
                 console.log(tempF5); 
                 console.log(humidity5); 
-                console.log(iconCode);
+                console.log(iconCode5);
             }
 
             
