@@ -58,6 +58,12 @@ $(document).ready(function() {
             method: 'GET'
         }).then(function(response) {
             console.log(response);
+            
+            for (var i=0; i<2; i++){
+                console.log(response.list[i].main.temp);
+                console.log(response.list[i].main.humidity);
+                console.log(response.list[i].weather[0].icon);
+            }
         })
     }
 
@@ -67,4 +73,3 @@ $(document).ready(function() {
 
       //on click listener to get the city from localstorage
 }) 
-//https://api.openweathermap.org/data/2.5/forecast?q=dallas&appid=166a433c57516f51dfab1f7edaed8413
