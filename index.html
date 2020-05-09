@@ -15,6 +15,8 @@
     
     <script src="https://kit.fontawesome.com/888a1c1363.js" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
 </head>
 
 <body>
@@ -22,12 +24,12 @@
     <div class="container col-12">
         <div class="card col-12">
 
-            <!--HEADER-->
-            <div class="row">
-                <div class="card-header col-12">
-                    <h1>Weather Bug</h1>
-                </div>
+        <!--HEADER-->
+        <div class="row">
+            <div class="card-header col-12">
+                <h1>Weather Bug</h1>
             </div>
+        </div>
         
         <!--WEATHER DATA CONTENT-->
         <div class="row">
@@ -44,13 +46,8 @@
                               <button class="btn btn-outline-secondary my-sm-0" type="submit" id="submitBtn">Search</button>
                             </form>
                           </nav>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">City history 1</li>
-                            <li class="list-group-item">City history 2</li>
-                            <li class="list-group-item">City history 3</li>
-                            <li class="list-group-item">City history 4</li>
-                            <li class="list-group-item">City history 5</li>
-                            <li class="list-group-item">City history 6</li>
+                        <ul class="list-group list-group-flush" id="searchList">
+
                         </ul>
                     </div>
                 </div>
@@ -65,9 +62,9 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <p id="city2Day">City</p>
+                            <p id="city2Day"></p>
                             <p id="date">Day</p> 
-                            <img src="http://openweathermap.org/img/wn/11d@2x.png" id="icon2Day" alt="weather-icon"> </li>
+                            <img src="http://openweathermap.org/img/wn/01d@2x.png" id="icon2Day" alt="weather-icon"> </li>
                         <li class="list-group-item" id="temp2Day">Temperature</li>
                         <li class="list-group-item" id="humidity2Day">Humidity</li>
                         <li class="list-group-item" id="wind2Day">Wind Speed</li>
@@ -80,15 +77,11 @@
             <!--FUTURE WEATHER CARD-->
             <div class="row">
                 <div class="card" style="width: 100%" id="view">
-                    <div class="card-header">
+                    <div class="card-header" id="fiveDayForcast">
                         5-Day Forcast
                     </div>
-                    <div id="forcast">
-                        <div class="card">MONDAY</div>
-                        <div class="card">TUESDAY</div>
-                        <div class="card">WEDNESDAY</div>
-                        <div class="card">THURSDAY</div>
-                        <div class="card">FRIDAY</div>
+                    <div id="forcast" class="row">
+                        
                     </div>
                 </div>
             </div>
