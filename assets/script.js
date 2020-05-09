@@ -1,11 +1,20 @@
 $(document).ready(function () {
-    
+    storedCity();
+
+    function storedCity(){
+       var lastCity = localStorage.getItem('city');
+        $("#city-lookup").empty();
+        $("#city-lookup").val(lastCity);
+        
+        get1DayWeather();  
+    }
+
     //DISPLAY CURRENT DAY IN JUMBOTRON
     $("#date").html(moment().format("MMMM DD, YYYY").toString());
  
     //GET 1 DAY WEATHER DATA
-    function get1DayWeather(e) {
-        e.preventDefault();
+    function get1DayWeather() {
+        
         //save city to local history
         var cityLookUp = $("#city-lookup").val().trim();
         var city = cityLookUp.toUpperCase();
@@ -103,9 +112,7 @@ $(document).ready(function () {
         $("#city-lookup").empty();
         $("#city-lookup").val(buttonName);
         
-        //get1DayWeather
-
-        //run get5day
+        get1DayWeather();   
     });
 
     //event listener for page load - run function with value from local storage
