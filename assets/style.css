@@ -18,9 +18,15 @@
 .col-8{
     float: left;
 }
+#favorable{
+    background-color: green;
+}
+#moderate{
+    background-color: yellow
+}
 
-#view {
-    margin: 10px;
+#severe{
+    background-color: red;
 }
 #forcast{
     margin:0;

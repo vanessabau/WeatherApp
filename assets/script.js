@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-    var cityLinks = document.querySelectorAll("a");
     
     //DISPLAY CURRENT DAY IN JUMBOTRON
     $("#date").html(moment().format("MMMM DD, YYYY").toString());
@@ -29,7 +27,7 @@ $(document).ready(function () {
         var windSpeed = response.wind.speed;
         var lon = response.coord.lon;
         var lat = response.coord.lat;
-        var searchHistory = $("<div class='card searchHistory'>").html("<button type='button' class='btn btn-link'>"+city+"</button>");
+        var searchHistory = $("<div class='card searchHistory'>").html("<button type='button' class='btn btn-link' id='"+city+"'>"+city+"</button>");
 
         //Transfer to HTML
         $("#city2Day").text(city);
@@ -47,7 +45,19 @@ $(document).ready(function () {
                 url: queryURL,
                 method: 'GET'
             }).then(function (response) {
-                $("#uv2Day").text("UV Index: "+ response.value);
+                $(".uv").text("UV Index: "+ response.value);
+                
+                var cityUv = parseFloat(response.value);
+                console.log(cityUv);
+                if(cityUv<3){
+                    $(".uv").attr("id", "favorable");
+                }
+                else if((3<=cityUv) && (cityUv<7) ){
+                    $(".uv").attr("id", "moderate");
+                }
+                else {
+                    $(".uv").attr("id", "severe");
+                }
             })
             }
             getUv(lat, lon);
@@ -76,7 +86,7 @@ $(document).ready(function () {
                     "Humidity: " + humidity5 + "<br>" +
                     "<img src='http://openweathermap.org/img/wn/" + iconCode5 + "@2x.png' style='width: 30px'></div>"
                 );
-                $("#forcast").append(forcastDiv);
+                $("#forcast").append(forcastDiv);   
             }
         })
     }
@@ -86,8 +96,22 @@ $(document).ready(function () {
 
     //on click for search history buttons
     $("#searchList").on("click", ".btn-link", function(){
-        console.log("worked");
+        //grab button name
+        var buttonName = $(this).attr("id").toString();
+        console.log(buttonName);
+        //set city-lookup val to button name
+        $("#city-lookup").empty();
+        $("#city-lookup").val(buttonName);
+        
+        //get1DayWeather
+
+        //run get5day
     });
+
+    //event listener for page load - run function with value from local storage
+
+
+
 })
 
 
