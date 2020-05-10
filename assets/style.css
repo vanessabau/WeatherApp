@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
 }
-
+/* Set basic style for page header*/
 #title-head{
     color: white;
     background-color: 	#0ea7b5;
@@ -10,17 +10,16 @@
     padding-top: 10px;
     padding-bottom: 5px;
 }
-
+/* Set styles for all card-headers*/
 .card-header{
     text-align: center;
     padding: 0px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+/* Set styles for specific cards and their headers*/
 .sm-card{
     background-color:#6bd2db;
 }
-
 .city-search {
     margin-top: 0px;
     margin-left: 10px;
@@ -40,15 +39,6 @@
 #current-view{
     margin-right:10px;
 }
-#favorable{
-    background-color: green;
-}
-#moderate{
-    background-color: yellow
-}
-#severe{
-    background-color: red;
-}
 
 #view {
     margin-top: 15px;
@@ -67,7 +57,18 @@
     margin: 3px;
     padding: 2px;
 }
+/* Section used to color-code UV Index */
+#favorable{
+    background-color: green;
+}
+#moderate{
+    background-color: yellow
+}
+#severe{
+    background-color: red;
+}
 
+/* Style bottom of page and footer*/
 #spaceholder{
     height: 30px;
 }
@@ -85,4 +86,5 @@
     background-color: #ffbe4f;
     color: white;
     text-align: center;
+    border-radius: 5px;
   }

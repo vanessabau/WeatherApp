@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //Load city from local storage and run function on page load 
     storedCity();
 
     function storedCity(){
@@ -9,13 +10,13 @@ $(document).ready(function () {
         get1DayWeather();  
     }
 
-    //DISPLAY CURRENT DAY IN JUMBOTRON
+    //Display current day in jumbotron
     $("#date").html(moment().format("MMMM DD, YYYY").toString());
  
-    //GET 1 DAY WEATHER DATA
+    //Get 1 day weather data 
     function get1DayWeather() {
         
-        //save city to local history
+        //save user's city input to local history
         var cityLookUp = $("#city-lookup").val().trim();
         var city = cityLookUp.toUpperCase();
         localStorage.setItem('city', city);
@@ -48,16 +49,18 @@ $(document).ready(function () {
 
         //UV Index API call
         function getUv(lat, lon) {
-            //UV Index API Call
+            
             var queryURL = "http://api.openweathermap.org/data/2.5/uvi?appid=166a433c57516f51dfab1f7edaed8413&lat="+lat+"&lon=" + lon;
             $.ajax({
                 url: queryURL,
                 method: 'GET'
             }).then(function (response) {
+                //Target lat and lon of 1 day api call and pass values to UV Index
                 $(".uv").text("UV Index: "+ response.value);
-                
+                //Convert value to floating point number
                 var cityUv = parseFloat(response.value);
                 console.log(cityUv);
+                //If/else statement to assign id's to target sections to assign colors
                 if(cityUv<3){
                     $(".uv").attr("id", "favorable");
                 }
@@ -69,23 +72,25 @@ $(document).ready(function () {
                 }
             })
             }
+            //Call UV Index function
             getUv(lat, lon);
         })
+        //Call 5 Day forcast function
         get5day(cityLookUp);
     }
 
-    //5 Day forcast API call
+    //Define 5 Day forcast function
     function get5day(city5) {
         var city5 = $("#city-lookup").val().trim();
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city5 + "&appid=166a433c57516f51dfab1f7edaed8413";
         
-        //5 Day forcast Ajax
+        //5 Day forcast API call
         $.ajax({
             url: queryURL,
             method: 'GET'
         }).then(function (response) {
             $("#forcast").empty();  
-
+            //Loop through results to populate 5-day forcast dynamically
             for (var i = 0; i < 5; i++) {
                 var tempF5 = ((response.list[i].main.temp - 273.15) * 1.80 + 32).toFixed(2);
                 var humidity5 = response.list[i].main.humidity;
@@ -95,15 +100,16 @@ $(document).ready(function () {
                     "Humidity: " + humidity5 + "<br>" +
                     "<img src='http://openweathermap.org/img/wn/" + iconCode5 + "@2x.png' style='width: 30px'></div>"
                 );
+                //Append 5-day forcast to their html section
                 $("#forcast").append(forcastDiv);   
             }
         })
     }
   
-    //on click launch function
+    //on click launch main function
     $("#submitBtn").on("click", get1DayWeather);
 
-    //on click for search history buttons
+    //on click of search history buttons to launch function with city from search history
     $("#searchList").on("click", ".btn-link", function(){
         //grab button name
         var buttonName = $(this).attr("id").toString();
@@ -111,62 +117,8 @@ $(document).ready(function () {
         //set city-lookup val to button name
         $("#city-lookup").empty();
         $("#city-lookup").val(buttonName);
-        
+        //run function
         get1DayWeather();   
     });
 
-    //event listener for page load - run function with value from local storage
-
-
-
 })
-
-
-
- //on click launch function
-    //$(".clickMe").on("click", testing);
-
-    //on click listener to get the city from localstorage
-   // $("a").on("click", function(e){
-       // e.preventDefault();
-       // alert("worked");
-    //});*/
- //console.log(cityLookUp.toUpperCase());
-            /*var liOfSearch = $("<li>");
-            liOfSearch.attr("class", `list-group-item`);
-            liOfSearch.val(cityLookUp.toUpperCase())
-            liOfSearch.text(cityLookUp.toUpperCase());
-            $("#searchList").append(liOfSearch);*/
-
-
- /* 
- 
- function testTest(params) {
-        params.preventDefault()
-        alert("works");
-        //function recursion - get the weather forecast
-    }
-    $(".clickMe").click(testTest);
- 
- var citySearch;
-    citySearch.push(cityLookUp.toUpperCase())
-            localStorage.setItem('history', JSON.stringify(citySearch))
-            
-    //localStorage.getItem(JSON.parse(citySearch))
-    if (JSON.parse(localStorage.getItem('history'))) {
-         citySearch = JSON.parse(localStorage.getItem('history'))
-    } else {
-         citySearch = []
-    }
-    console.log(citySearch);
-    citySearch.each(
-        var liOfSearch = $("<li>");
-            liOfSearch.attr("class", `list-group-item`);
-            liOfSearch.val(cityLookUp.toUpperCase())
-            liOfSearch.text(cityLookUp.toUpperCase());
-            $("#searchList").append(liOfSearch);
-    )
-    $.each(citySearch, function(index, value) {
-        console.log(value);
-        //create those li in here
-    })*/

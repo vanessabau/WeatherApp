@@ -1,53 +1,29 @@
-# WeatherApp
-Weather data app
+THE DAILY FORCAST: 
+The Daily Forcast is a city-weather data page that offers users daily weather information for the current day as well as a five-day forcast. Daily weather data includes temperature, humidity, wind speed, and UV Index.
 
-The weather app allows users to type in a city name and retrieve current and future weather conditions for the selected city, and searched cities are added to the "search history"
+TO USE
+The Daily Forcast can be accessed and utilized through the web address https://vanessabau.github.io/WeatherApp/index.html No additional downloads are needed, and to access data one must simply type in the name of a city.
 
-CURRENT WEATHER: 
-- conditions must include: city name, date, icon representing weather conditions, temperature, humidity, wind speed, and UV index.
-- Viewing UV Index displays a color indicating whether conditinos are favorable, moderate, or severe. 
+PROCESS
+The Daily Forcast building process was piece-by-piece. I started with Pseudo code to structure sections that I could accomplish. 
+The overall building order was:
+1. Create repository and clone, create files, folders, links, then basic html.
 
-FUTURE WEATHER: 
-- displays 5-day forcast
-- Each 5-day forcast includes the date, an icon of weather conditions, temperature, and humidity.
+2. Create the html and bootstrap elements which gave the visual layout of the site.
 
-SEARCH HISTORY:
-- Clicking on a city in search history displays the current and future weather conditions
-- When the page is opened the information from the last city searched is displayed. 
+3. Assemble all API addresses and keys, build AJAX calls, and an on-click event listener to run functions.
 
-PSEUDO CODE
+4. I utilized 3 API sources from the OpenWeather source and utilized moment.js to retrieve the daily weather, the five day forcast, the UV Index, and display the current day.
 
-1. SETUP (DONE)
-    - build html, script sheet, css sheet and link all pages
-    - Insert links in html to bootstrrap and jquery
+5. The most challengin facet was dynamically creating the search history list, creating an on-click function for a dynamically created button, and figuring out how to pass the functions the value from the search history list and the local storage. 
 
-2. CREATE BASIC PAGE (DONE)
-    - Format html and css to hold contents
-
-3. API
-    - Select API(s)
-        * need current conditions api call 
-        * need UV Index API call
-    - link to API
-    - Create AJAX call
-
-4. TARGET DATA FOR API CALLS
-    - create variables to hold targeted data: 
-        * Current weather: city name, date, weather conditions, temperature, humidity, wind speed, UV Index
-        * 5 day forcast: weather conditions icon, temperature, humidity
-
-5. ? Might need to convert city location from API call to longitude and latitude for UV data
-
-5.5 convert temperature to farenheit
-
-6. Create on click function for submit button to search for a city's data
-
-7. Dynamically update the html with data retrieved from API calls
-
-8. Store respnse data in local storage
-
-9. Link name titles of previously searched cities to on click events that display their current and past weather
-
-10. Make sure the last city search displays on page load
+6. Finally, I updated the styling and added an extra section to indicate the UV Index color coding. 
 
 
+RESOURCES:
+
+API: OpenWeatherMap.org: https://openweathermap.org/
+API: https://momentjs.com/
+BOOTSTRAP: https://getbootstrap.com/
+color schemes: https://www.color-hex.com/color-palette/827
+Solutions to challenges like creating and on-click on synamically created buttons and grabbing values from local storage came from stack overflow and W3Schools (these have become my favorite two resources for finding answers)
