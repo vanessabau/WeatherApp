@@ -2,15 +2,34 @@
     box-sizing: border-box;
 }
 
+#title-head{
+    color: white;
+    background-color: 	#0ea7b5;
+    border-bottom: #ffbe4f 5px solid;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
 .card-header{
-    background-color: burlywood;
     text-align: center;
     padding: 0px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#city-search {
-    margin: 10px;
+.sm-card{
+    background-color:#6bd2db;
+}
+
+.city-search {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right:10px;
+    margin-bottom: 10px;
+}
+#uv-key{
+    padding-top:10px;
+    padding-bottom: 10px;
 }
 .form-control{
     margin-right: 10px;
@@ -18,15 +37,23 @@
 .col-8{
     float: left;
 }
+#current-view{
+    margin-right:10px;
+}
 #favorable{
     background-color: green;
 }
 #moderate{
     background-color: yellow
 }
-
 #severe{
     background-color: red;
+}
+
+#view {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 10px;
 }
 #forcast{
     margin:0;
@@ -40,3 +67,22 @@
     margin: 3px;
     padding: 2px;
 }
+
+#spaceholder{
+    height: 30px;
+}
+#footer{
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.footer {
+    margin-left:0px; 
+    margin-right: 0px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffbe4f;
+    color: white;
+    text-align: center;
+  }

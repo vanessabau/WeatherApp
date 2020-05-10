@@ -26,19 +26,19 @@
 
         <!--HEADER-->
         <div class="row">
-            <div class="card-header col-12">
-                <h1>Weather Bug</h1>
+            <div class="card-header col-12" id="title-head">
+                <h1>The Daily Forcast</h1>
             </div>
         </div>
         
         <!--WEATHER DATA CONTENT-->
-        <div class="row">
+        <div class="row" id="all-content">
             <!--Search column-->
             <div class="col-4">
-                <div class="row">
-                    <div class="card" style="width: 100%" id="city-search">
-                        <div class="card-header">
-                            City
+                <div class="row" id="search-column">
+                    <div class="card city-search" style="width: 100%">
+                        <div class="card-header sm-card">
+                            City Search
                         </div>
                         <nav class="navbar navbar-light bg-light">
                             <form class="form-inline">
@@ -50,21 +50,34 @@
                         <!--Populate search history here-->
                         </ul>
                     </div>
+
+                    <div class="card city-search" style="width: 100%" >
+                        <div class="card-header" id="uv-key">
+                            Understanding the UV Index
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="background-color: lightgreen;">GREEN: FAVORABLE</li>
+                            <li class="list-group-item" style="background-color: yellow;">Yellow: MODERATE</li>
+                            <li class="list-group-item" style="background-color: rgb(255, 92, 80)">RED: SEVERE</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            
 
             <!--CURRENT WEATHER CARD-->
             <div class="col-8">
             <div class="row">
-                <div class="card" style="width: 100%" id="view">
-                    <div class="card-header">
+                <div class="card" style="width: 100%" id="current-view">
+                    <div class="card-header sm-card" >
                         Current Weather
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <p id="city2Day"></p>
                             <p id="date">Day</p> 
-                            <img src="http://openweathermap.org/img/wn/01d@2x.png" id="icon2Day" alt="weather-icon"> </li>
+                            <img src="http://openweathermap.org/img/wn/01d@2x.png" id="icon2Day" alt="weather-icon"></li>
                         <li class="list-group-item" id="temp2Day">Temperature</li>
                         <li class="list-group-item" id="humidity2Day">Humidity</li>
                         <li class="list-group-item" id="wind2Day">Wind Speed</li>
@@ -76,7 +89,7 @@
             <!--FUTURE WEATHER CARD-->
             <div class="row">
                 <div class="card" style="width: 100%" id="view">
-                    <div class="card-header" id="fiveDayForcast">
+                    <div class="card-header sm-card" id="fiveDayForcast">
                         5-Day Forcast
                     </div>
                     <div id="forcast" class="row">
@@ -86,8 +99,12 @@
             </div>
         </div>
     </div>
+    </div>
+    <div id="spaceholder"></div>
+    <div class="footer">
+        <p id="footer"> &copy vb 2020</p>
+      </div>
    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <!--JavaScript Link-->
     <script src="./assets/script.js"></script>
 </body>
